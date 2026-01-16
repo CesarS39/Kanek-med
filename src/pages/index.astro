@@ -17,24 +17,19 @@ import Features from "../components/Features.astro";
         <div
           class="relative bg-linear-to-br from-blue-700 to-blue-900 rounded-[3rem] p-12 md:p-20 overflow-hidden shadow-2xl shadow-blue-200"
         >
-          <div
-            class="absolute top-0 right-0 -translate-y-12 translate-x-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-          >
-          </div>
-          <div
-            class="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl"
-          >
-          </div>
+          <!-- ... blobs decorativos iguales ... -->
 
           <div class="relative max-w-3xl mx-auto text-center">
             <h2
               class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight"
             >
-              ¿Listo para optimizar tus pedidos?
+              ¿Listo para tener siempre el catálogo completo a un clic?
             </h2>
+
             <p class="text-lg md:text-xl text-blue-100 mb-10 leading-relaxed">
-              Únete a los profesionales de la salud que ya utilizan nuestro
-              catálogo digital para cotizar en segundos.
+              Accede al catálogo digital actualizado de nuestra farmacéutica.<br
+              />
+              Precios en tiempo real, cotizaciones instantáneas y pedidos directos.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -42,7 +37,7 @@ import Features from "../components/Features.astro";
                 href="/catalogo"
                 class="group bg-emerald-500 text-white px-10 py-4 rounded-2xl text-lg font-bold hover:bg-emerald-400 transition-all shadow-lg hover:shadow-emerald-500/30 flex items-center justify-center gap-2"
               >
-                Comenzar ahora
+                Explorar el Catálogo Ahora
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 group-hover:translate-x-1 transition-transform"
@@ -88,19 +83,22 @@ import Features from "../components/Features.astro";
             <li>
               <a
                 href="#inicio"
-                class="text-slate-600 hover:text-blue-600 transition">Inicio</a>
+                class="text-slate-600 hover:text-blue-600 transition">Inicio</a
+              >
             </li>
             <li>
               <a
                 href="#beneficios"
                 class="text-slate-600 hover:text-blue-600 transition"
-                >Beneficios</a>
+                >Beneficios</a
+              >
             </li>
             <li>
               <a
                 href="/catalogo"
                 class="text-slate-600 hover:text-blue-600 transition"
-                >Catálogo completo</a>
+                >Catálogo completo</a
+              >
             </li>
           </ul>
         </div>
