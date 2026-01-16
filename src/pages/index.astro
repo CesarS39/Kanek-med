@@ -1,16 +1,136 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="KanekMed - Catálogo Médico Digital">
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+
+    <!-- CTA Final -->
+    <section class="relative py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="relative bg-linear-to-br from-blue-700 to-blue-900 rounded-[3rem] p-12 md:p-20 overflow-hidden shadow-2xl shadow-blue-200"
+        >
+          <div
+            class="absolute top-0 right-0 -translate-y-12 translate-x-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl"
+          >
+          </div>
+
+          <div class="relative max-w-3xl mx-auto text-center">
+            <h2
+              class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight"
+            >
+              ¿Listo para optimizar tus pedidos?
+            </h2>
+            <p class="text-lg md:text-xl text-blue-100 mb-10 leading-relaxed">
+              Únete a los profesionales de la salud que ya utilizan nuestro
+              catálogo digital para cotizar en segundos.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/catalogo"
+                class="group bg-emerald-500 text-white px-10 py-4 rounded-2xl text-lg font-bold hover:bg-emerald-400 transition-all shadow-lg hover:shadow-emerald-500/30 flex items-center justify-center gap-2"
+              >
+                Comenzar ahora
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div class="col-span-1">
+          <div class="flex items-center space-x-3 mb-6">
+            <div
+              class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"
+            >
+              <span class="text-white font-bold">K</span>
+            </div>
+            <span class="text-xl font-bold text-slate-800">KanekMed</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed">
+            La plataforma líder en consulta y cotización de insumos médicos para
+            profesionales en México.
+          </p>
+        </div>
+
+        <div class="col-span-1">
+          <h4 class="text-slate-900 font-bold mb-6">Navegación</h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                href="#inicio"
+                class="text-slate-600 hover:text-blue-600 transition">Inicio</a>
+            </li>
+            <li>
+              <a
+                href="#beneficios"
+                class="text-slate-600 hover:text-blue-600 transition"
+                >Beneficios</a>
+            </li>
+            <li>
+              <a
+                href="/catalogo"
+                class="text-slate-600 hover:text-blue-600 transition"
+                >Catálogo completo</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-span-1">
+          <h4 class="text-slate-900 font-bold mb-6">Legal</h4>
+          <ul class="space-y-4 text-slate-600">
+            <li>Aviso de Privacidad</li>
+            <li>Términos de Servicio</li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+              Soporte disponible
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-slate-500 text-sm italic">
+          &copy; {new Date().getFullYear()} KanekMed. Todos los derechos reservados.
+        </p>
+        <div class="flex space-x-6">
+          <span
+            class="text-xs font-medium text-slate-400 uppercase tracking-widest"
+            >Hecho con ❤️ para el sector médico</span
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

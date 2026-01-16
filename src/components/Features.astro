@@ -1,0 +1,65 @@
+---
+const features = [
+  {
+    icon: "🔍",
+    title: "Búsqueda Avanzada",
+    description:
+      "Filtra por categoría, laboratorio, principio activo o busca directamente por nombre.",
+  },
+  {
+    icon: "💰",
+    title: "Precios Actualizados",
+    description:
+      "Consulta precios en tiempo real con IVA incluido y sin sorpresas.",
+  },
+  {
+    icon: "🛒",
+    title: "Cotización Rápida",
+    description:
+      "Agrega productos al carrito y genera tu cotización en PDF al instante.",
+  },
+  {
+    icon: "📱",
+    title: "Envío por WhatsApp",
+    description:
+      "Envía tu cotización directamente por WhatsApp con un solo clic.",
+  },
+  {
+    icon: "📋",
+    title: "+4,000 Productos",
+    description:
+      "Amplio catálogo de medicamentos de los principales laboratorios.",
+  },
+  {
+    icon: "✅",
+    title: "Fácil y Rápido",
+    description:
+      "Interfaz intuitiva diseñada para encontrar lo que necesitas en segundos.",
+  },
+];
+---
+
+<section id="beneficios" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">
+        Todo lo que necesitas
+      </h2>
+      <div class="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {
+        features.map((f) => (
+          <div class="group p-8 rounded-3xl border border-slate-100 bg-white hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-50 transition-all duration-300">
+            <div class="w-14 h-14 flex items-center justify-center text-3xl bg-slate-50 rounded-2xl group-hover:bg-blue-50 group-hover:scale-110 transition-all mb-6">
+              {f.icon}
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">{f.title}</h3>
+            <p class="text-slate-600 leading-relaxed">{f.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
