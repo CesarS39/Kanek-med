@@ -23,20 +23,33 @@ export default function Cart({
     0
   );
 
-  const handleGenerarYEnviar = async () => {
+  const handleGenerarCotizacion = async () => {
     if (items.length === 0) return;
     setEnviando(true);
+
     try {
+      // Generar y descargar PDF
       const pdfBlob = generarPDF(items);
-      const mensaje = `Hola, solicito cotización:%0A${items
-        .map((i) => `• ${i.producto.descripcion} (${i.cantidad})`)
-        .join("%0A")}%0A%0ATotal: $${total.toLocaleString()}`;
-      window.open(`https://wa.me/527714108656?text=${mensaje}`, "_blank");
       const url = URL.createObjectURL(pdfBlob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `cotizacion.pdf`;
+      a.download = `cotizacion_${new Date().toLocaleDateString("es-MX")}.pdf`;
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      // Preparar y copiar texto para WhatsApp
+      const mensaje = `Hola, solicito cotización:\n${items
+        .map((i) => `• ${i.producto.descripcion} (${i.cantidad})`)
+        .join("\n")}\n\nTotal: $${total.toLocaleString()}`;
+
+      await navigator.clipboard.writeText(mensaje);
+      alert("¡Cotización copiada al portapapeles! Puedes pegarla en WhatsApp");
+      // O mejor: usar un toast/notification library
+    } catch (error) {
+      console.error(error);
+      alert("Hubo un problema al generar/copiar la cotización");
     } finally {
       setEnviando(false);
     }
@@ -190,11 +203,11 @@ export default function Cart({
               </span>
             </div>
             <button
-              onClick={handleGenerarYEnviar}
-              disabled={enviando}
+              onClick={handleGenerarCotizacion}
+              disabled={enviando || items.length === 0}
               className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg"
             >
-              {enviando ? "Procesando..." : "📱 Enviar a WhatsApp"}
+              {enviando ? "Generando..." : "📄 Generar Cotización (PDF)"}
             </button>
             <button
               onClick={onLimpiar}

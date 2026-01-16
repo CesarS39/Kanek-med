@@ -152,7 +152,7 @@ export function generarPDF(items: ItemCarrito[]): Blob {
     { align: "center" }
   );
   doc.text(
-    "Contacto: ventas@kanekmed.com | Tel: +52 771 410 8656",
+    "Contacto: Tel: +52 771 410 8656",
     105,
     pageHeight - 11,
     { align: "center" }
